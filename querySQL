@@ -1,0 +1,14 @@
+SELECT LastName, FirstName
+FROM StudentData
+WHERE FavoriteColor LIKE '%Green%' OR FavoriteColor LIKE '%Black%'
+ORDER BY LastName ASC;
+
+SELECT FirstName, LastName
+FROM StudentData
+WHERE FavoriteColor LIKE '%Green%' OR FavoriteColor LIKE '%Black%'
+ORDER BY FirstName ASC;
+
+SELECT FavoriteColor, FirstName, LastName
+FROM StudentData
+WHERE FavoriteColor LIKE '%Green%' OR FavoriteColor LIKE '%Black%'
+ORDER BY FavoriteColor ASC;

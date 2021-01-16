@@ -1,0 +1,28 @@
+SELECT DISTINCT FirstName
+FROM StudentData
+ORDER BY FirstName ASC;
+
+SELECT COUNT(FirstName) as totalStudents
+FROM StudentData;
+
+SELECT FirstName
+FROM StudentData
+WHERE FirstName LIKE 'A%' OR FirstName LIKE 'C%'
+ORDER BY FirstName ASC;
+
+SELECT COUNT(Hometown) as rochesterNatives
+FROM StudentData
+WHERE Hometown LIKE 'Rochester%';
+
+SELECT FirstName, FavoriteColor
+FROM StudentData
+WHERE FavoriteColor LIKE '_____%'
+ORDER BY FirstName DESC;
+
+SELECT FirstName, FavoriteMovie
+FROM StudentData
+WHERE FavoriteMovie LIKE '%Up%';
+
+SELECT FirstName, FavoriteColor
+FROM StudentData
+WHERE FavoriteColor NOT LIKE '%Green%' AND FavoriteColor NOT LIKE '%Black%';

@@ -1,0 +1,35 @@
+SELECT Title, Name
+FROM Album, Artist
+WHERE Album.ArtistId = Artist.ArtistId AND Title LIKE 'B%';
+
+SELECT FirstName, LastName, Total, InvoiceId, City
+FROM Customer, Invoice
+WHERE Customer.CustomerId = Invoice.CustomerId AND Invoice.Total > 5.00 AND Customer.City LIKE 'Orlando';
+
+SELECT Total
+FROM Invoice
+WHERE Total > 
+(SELECT MAX(Total) 
+FROM Invoice 
+WHERE BillingCity LIKE 'Toronto')
+ORDER BY Total ASC;
+
+SELECT DISTINCT Total, InvoiceID
+FROM Invoice, Customer
+WHERE Total > 
+(SELECT MAX(Total)
+FROM Invoice, Customer
+WHERE FirstName = 'Michelle' AND LastName = 'Brooks' AND Customer.CustomerId = Invoice.CustomerId)
+ORDER BY Total ASC;
+
+SELECT FirstName, LastName
+FROM Customer, Employee
+WHERE Customer.LastName = Employee.LastName;
+
+SELECT Title, Name
+FROM Album JOIN Artist
+ON Album.ArtistId = Artist.ArtistId AND Title LIKE 'B%';
+
+SELECT FirstName, LastName, Total, InvoiceId, City
+FROM Customer JOIN Invoice
+ON Customer.CustomerId = Invoice.CustomerId AND Invoice.Total > 5.00 AND Customer.City LIKE 'Orlando';

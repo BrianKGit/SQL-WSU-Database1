@@ -1,0 +1,11 @@
+SELECT fName, lName
+FROM Staff
+WHERE branchNo = 'B003';
+
+SELECT fName, lName
+FROM Staff, Branch
+WHERE city = 'Bristol';
+
+SELECT postcode
+FROM Staff, Branch
+WHERE fName = 'David' AND lName = 'Ford' AND Staff.branchNo = Branch.branchNo;
